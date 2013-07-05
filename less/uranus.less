@@ -1,0 +1,40 @@
+.uranus {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #999999;
+    overflow: hidden;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        transition: all .25s linear;
+    }
+
+    &:before {
+        top: 0;
+        left: -120%;
+        border-top: 1em solid black;
+        border-right: 1em solid transparent;
+    }
+
+    &:after {
+        right: -120%;
+        bottom: 0;
+        border-bottom: 1em solid black;
+        border-left: 1em solid transparent;
+    }
+
+    &:checked {
+        &:before, &:after {
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:after {
+            right: 0;
+        }
+    }
+}
