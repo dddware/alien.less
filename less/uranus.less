@@ -2,16 +2,8 @@
     position: relative;
     width: 1em;
     height: 1em;
-    margin: 0.25em;
-    border: 1px solid black;
-    transition: all .1s linear;
+    border: 1px solid #999999;
     overflow: hidden;
-
-    &:active {
-        width: 1.5em;
-        height: 1.5em;
-        margin: 0em;
-    }
 
     &:before, &:after {
         content: '';
@@ -43,16 +35,6 @@
 
         &:after {
             right: 0;
-        }
-
-        &:active:before {
-            border-top-width: 1.5em;
-            border-right-width: 1.5em;
-        }
-
-        &:active:after {
-            border-bottom-width: 1.5em;
-            border-left-width: 1.5em;
         }
     }
 }
