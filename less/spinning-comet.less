@@ -1,0 +1,47 @@
+.spinning-comet {
+	@height: 32px;
+	@width: @height*2;
+	@green: #699933;
+	@red: #C25247;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+	border: 1px solid #777;
+	overflow: display;
+	width: @width;
+	height: @height;
+	border-radius: @height;
+	background: @red;
+	box-shadow: 
+		inset 0 0 20px rgba(0,0,0,0.5),
+		inset 0 2px 3px rgba(0,0,0,0.1);
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	&:before {
+		content: '';
+		font-size: @height*0.7;
+		display: block;
+		width: ((@height)-4px);
+		height: ((@height)-4px);
+		margin: 0px;
+		border-radius: 50%;
+		margin: 1px;
+		box-shadow: 
+			inset 0 -10px 20px rgba(0,0,0,0.1),
+			inset 0 3px 2px rgba(255,255,255,0.9),
+			0 3px 3px rgba(0,0,0,0.3);
+		left: 0;
+		background: #eee;
+		transition: all 0.2s;
+	}
+	&:hover:before {
+		background: white;
+	}
+	&:checked {
+		background: @green;
+		&:before {
+			margin-left: ((@height)+1px);
+		}
+	}
+}
