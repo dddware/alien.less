@@ -5,10 +5,7 @@
     margin: 0.25em;
     border: 1px solid black;
     transition: all .1s linear;
-
-    &:before {
-        transition: all .1s linear;
-    }
+    overflow: hidden;
 
     &:active {
         width: 1.5em;
@@ -16,19 +13,46 @@
         margin: 0em;
     }
 
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        transition: all .25s linear;
+    }
+
+    &:before {
+        top: 0;
+        left: -120%;
+        border-top: 1em solid black;
+        border-right: 1em solid transparent;
+    }
+
+    &:after {
+        right: -120%;
+        bottom: 0;
+        border-bottom: 1em solid black;
+        border-left: 1em solid transparent;
+    }
+
     &:checked {
+        &:before, &:after {
+        }
+
         &:before {
-            content: '';
-            position: absolute;
+            left: 0;
+        }
+
+        &:after {
             right: 0;
-            bottom: 0;
-            border-bottom: 0.85em solid black;
-            border-left: 0.85em solid transparent;
         }
 
         &:active:before {
-            border-bottom-width: 1.275em;
-            border-left-width: 1.275em;
+            border-top-width: 1.5em;
+            border-right-width: 1.5em;
+        }
+
+        &:active:after {
+            border-bottom-width: 1.5em;
+            border-left-width: 1.5em;
         }
     }
 }

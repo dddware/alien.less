@@ -1,0 +1,40 @@
+.black-hole {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    margin: 0.25em;
+    border: 1px solid black;
+    transition: all .1s linear;
+    overflow: hidden;
+
+    &:active {
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0em;
+    }
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background-color: black;
+        transition: top .25s linear;
+    }
+
+    &:before {
+        top: -100%;
+        left: 0;
+    }
+
+    &:after {
+        top: 100%;
+        right: 0;
+    }
+
+    &:checked {
+        &:before, &:after {
+            top: 0;
+        }
+    }
+}
