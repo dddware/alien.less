@@ -1,0 +1,32 @@
+.shooting-star {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background-color: black;
+    border: 1px solid #999999;
+    overflow: hidden;
+
+    &:before {
+        content: '\2605';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1em;
+        height: 1em;
+        margin: -0.5em 0 0 -0.5em;
+        line-height: 1em;
+        font-size: 5em;
+        text-align: center;
+        color: white;
+        transition: all .5s linear;
+    }
+
+    &:checked {
+        &:before {
+            font-size: 0;
+            opacity: 0;
+            -webkit-transform: rotate(180deg);
+        }
+    }
+} 
