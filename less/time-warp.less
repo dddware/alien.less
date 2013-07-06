@@ -1,0 +1,46 @@
+.time-warp {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background-color: white;
+    border: 1px solid #999999;
+    overflow: hidden;
+
+    &:before {
+        content: '\2713';
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        width: 1em;
+        height: 1em;
+        margin: -0.5em 0 0 -0.5em;
+        line-height: 1em;
+        font-size: 1.5em;
+        text-align: center;
+        color: black;
+        -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+        -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+           -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+            -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+             -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+                transition: all .5s cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+        -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+        -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+           -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+            -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+             -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+                transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+    }
+
+    &:after {
+        content: '';
+    }
+
+    &:checked {
+        &:before {
+            top: 50%;
+        }
+    }
+}
