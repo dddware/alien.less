@@ -1,0 +1,30 @@
+.mars {
+	@height: 32px;
+	@width: @height;
+	@color: #222;
+	@bgColor: orange;
+    border: 1px solid #222;
+    overflow: hidden;
+	width: @width;
+	height: @height;
+	border-radius: @height;
+	background: @bgColor;
+	box-shadow: 
+		inset 1px 0 0 transparent,
+		inset -1px 0 0 transparent,
+		inset 0 1px 0 transparent,
+		inset 0 -1px 0 transparent;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	&:checked {
+		background: @bgColor ;
+		box-shadow: 
+			inset 0 -1px 3px @bgColor,
+			inset @width*0.4 0 0 @color,
+			inset -@width*0.4 0 0 @color,
+			inset 0 @width*0.4 0 @color,
+			inset 0 -@width*0.4 0 @color;
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+	}
+}
