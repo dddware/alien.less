@@ -1,0 +1,305 @@
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+.uranus {
+  width: 1em;
+  height: 1em;
+  border: 1px solid #999999;
+  overflow: hidden;
+}
+.uranus:before,
+.uranus:after {
+  content: '';
+  position: absolute;
+  transition: all .25s linear;
+}
+.uranus:before {
+  top: 0;
+  left: -120%;
+  border-top: 1em solid black;
+  border-right: 1em solid transparent;
+}
+.uranus:after {
+  right: -120%;
+  bottom: 0;
+  border-bottom: 1em solid black;
+  border-left: 1em solid transparent;
+}
+.uranus:checked:before {
+  left: 0;
+}
+.uranus:checked:after {
+  right: 0;
+}
+.sun {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: display;
+  position: relative;
+  border: 1px solid #aaaaaa;
+  background: #eeeeee;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  margin: 14px;
+  box-shadow: inset 0 0 32px transparent;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.sun:checked {
+  background: #fffa00;
+  border: 3px dotted orange;
+  box-shadow: inset 2px 0 0 white, inset -2px 0 0 white, inset 0 2px 0 white, inset 0 -2px 0 white, inset 0 32px 0 orange, inset 0 -32px 0 orange, inset 32px 0 0 orange, inset -32px 0 0 orange;
+}
+.sun:checked:before,
+.sun:checked:after {
+  content: '';
+  position: absolute;
+  background: white;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.sun:checked:before {
+  height: 12.8px;
+  width: 25.6px;
+  top: 13px;
+  left: 8px;
+}
+.sun:checked:after {
+  height: 16px;
+  width: 16px;
+  top: 10px;
+  left: 14px;
+}
+.black-hole {
+  width: 1em;
+  height: 1em;
+  border: 1px solid #999999;
+  overflow: hidden;
+}
+.black-hole:before,
+.black-hole:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  transition: top .25s linear;
+}
+.black-hole:before {
+  top: -100%;
+  left: 0;
+}
+.black-hole:after {
+  top: 100%;
+  right: 0;
+}
+.black-hole:checked:before,
+.black-hole:checked:after {
+  top: 0;
+}
+.shooting-star {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  background-color: black;
+  border: 1px solid #999999;
+  overflow: hidden;
+}
+.shooting-star:before {
+  content: '\2605';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em 0 0 -0.5em;
+  line-height: 1em;
+  font-size: 5em;
+  text-align: center;
+  color: white;
+  transition: all .5s linear;
+}
+.shooting-star:checked:before {
+  font-size: 0;
+  opacity: 0;
+  -webkit-transform: rotate(180deg);
+}
+.mars {
+  border: 1px solid #999999;
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  background: white;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), inset 1px 0 0 transparent, inset -1px 0 0 transparent, inset 0 1px 0 transparent, inset 0 -1px 0 transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.mars:checked {
+  border: 3px solid #222222;
+  background: orange;
+  box-shadow: inset 0 0 3px orange, inset 12.8px 0 0 #222222, inset -12.8px 0 0 #222222, inset 0 12.8px 0 #222222, inset 0 -12.8px 0 #222222;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.venus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: display;
+  position: relative;
+  border: 1px solid #999999;
+  background: #eeeeee;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  margin: 14px;
+  box-shadow: inset 0 0 0 orange;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.venus:before,
+.venus:after {
+  content: '';
+  opacity: 0;
+  transition: all 1s;
+}
+.venus:checked {
+  border: 0;
+  box-shadow: inset 0 -32px 0 orange;
+}
+.venus:checked:before,
+.venus:checked:after {
+  content: '';
+  background: orange;
+  position: absolute;
+  opacity: 1;
+  background: white;
+  border-radius: 50%;
+  -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.venus:checked:before {
+  background: #0085ff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 16px 5px #0085ff;
+  height: 16px;
+  width: 41.6px;
+  top: 11px;
+  left: -4px;
+}
+.venus:checked:after {
+  background: orange;
+  height: 9.6px;
+  width: 32px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  top: 9px;
+  left: 0px;
+}
+/*77777777777777777777777777777alien.css
+7777777777777777777777777777777777777777
+7777777777777777777777777777777777777777
+777777777777777~++++++++=777777777777777
+77,+===+==...+++++++++?+++.7777777777777
+77+=~=...=:+++++++++++++++++.77777777777
+77.++~.77.?++++++++++++++++++.7777777777
+7777+=~~.+++++++++++++++++++++.777777777
+777777==~~.++++++++++++++++++++777777777
+77777777~==~~.+++++?+?+++++++++777777777
+77777777??.+=+~~.++++++++?+++++:.7777777
+77777777+???+.===~~=.++++++?+++~~=.77777
+77777777++++????.++=+~~=.++++++77=~=~777
+77777777I++++++?????.++=+~~~:..777=~=.77
+777777777.?+++++++++???+,:=====~~~~+==77
+7777777777~++++++++++++????+.7..~=++. 77
+777777777777.+++++++++++++,7777777777777
+77777777777777I=++++?+++~ 77777777777777
+7777777777777777777777777777777777777777
+7777777777777777777777777777777777777777
+7777777777777777777777777777777777777777
+https://github.com/neemzy/alien.less  */
+
+.spinning-comet {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  overflow: display;
+  width: 48px;
+  height: 24px;
+  border-radius: 24px;
+  background: #c25247;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), inset 0 3px 3px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.spinning-comet:before {
+  content: '';
+  font-size: 16.8px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+  border-radius: 50%;
+  margin: 1px;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.1), inset 0 3px 2px rgba(255, 255, 255, 0.9), 0 3px 3px rgba(0, 0, 0, 0.3);
+  left: 0;
+  background: #eeeeee;
+  transition: all 0.2s;
+}
+.spinning-comet:hover:before {
+  background: white;
+}
+.spinning-comet:checked {
+  background: #699933;
+}
+.spinning-comet:checked:before {
+  margin-left: 25px;
+}
+.time-warp {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  background-color: white;
+  border: 1px solid #999999;
+  overflow: hidden;
+}
+.time-warp:before {
+  content: '\2713';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em 0 0 -0.5em;
+  line-height: 1em;
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+
+}
+.time-warp:after {
+  content: '';
+}
+.time-warp:checked:before {
+  top: 50%;
+}
